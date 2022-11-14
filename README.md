@@ -51,3 +51,7 @@ I chose to use red bacause it is a common colour used in theatres.
 ### Deployment
 
 ## Credits
+
+### Code
+
+### Content and media
