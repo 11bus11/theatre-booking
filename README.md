@@ -13,12 +13,20 @@ I want the admin to be able to:
 - Change and cancel bookings.
 
 ### Colour
-I chose to use red bacause it is a common colour used in theatres. 
+I chose to use red bacause it is a common colour used in theatres. I have a lighter and a darker red for background and menues. Then i have a green for buttons, and black and white for the text. White is also used for the content fields.
+
+All colours passed the [Accessibility Checker's](https://www.accessibilitychecker.org/color-contrast-checker/) colour contrast test.
+![Lighter red colour](assets/theatre-light-red.JPG)
+![Darker red colour](assets/theatre-dark-red.JPG)
+![Green colour](assets/theatre-green.JPG)
+
+
 
 ### Structure and typography
 #### Structure
 
 #### Typography
+All fonts are san serif due to it being easier to read on a screen. The fonts i chose
 
 ## Features
 ### Starting page
