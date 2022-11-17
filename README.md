@@ -25,10 +25,12 @@ All colours passed the [Accessibility Checker's](https://www.accessibilitychecke
 I wanted the website to look classy and to remind people of a theatre (tried to do that with the background colour).
 #### Structure
 These are the innitial wireframes.
+
 ![Wireframe index](assets/wireframe-index.JPG)
 ![Wireframe index](assets/wireframe-booking.JPG)
 ![Wireframe index](assets/wireframe-about.JPG)
 ![Wireframe index](assets/wireframe-login.JPG)
+![Wireframe mobile](assets/wireframe-mobile.JPG)
 
 #### Typography
 All fonts are san serif due to it being easier to read on a screen. The fonts i chose were
