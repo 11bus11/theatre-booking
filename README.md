@@ -33,7 +33,7 @@ These are the innitial wireframes.
 ![Wireframe mobile](assets/wireframe-mobile.JPG)
 
 #### Typography
-All fonts are san serif due to it being easier to read on a screen. The fonts i chose were
+All fonts are san serif due to it being easier to read on a screen. The fonts i chose were Mukta for the content, and Pinyon Script for "city theatre" at the top. It is also used for some of the text ont he log in page and the promotional image.
 
 ## Features
 ### Starting page
