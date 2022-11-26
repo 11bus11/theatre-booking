@@ -8,8 +8,8 @@ PLAYS = ((0, "a christmas carol"), (1, "phantom of the opera"))
 
 class Booking(models.Model):
     play = models.IntegerField(choices=PLAYS)
-    date = models.DateTimeField()
-    time = models.DateTimeField()
+    date = models.DateField()
+    time = models.TimeField()
     name = models.CharField(max_length=200)
     email = models.EmailField()
     status = models.IntegerField(choices=STATUS, default=0)
@@ -19,3 +19,11 @@ class Booking(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Use(models.Model):
+    email = models.EmailField()
+    password = models.CharField(min_length=5, max_length=80)
+
+    class Meta:
+        ordering = ['email']
