@@ -10,7 +10,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-/*
+
  :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -64,7 +64,7 @@
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
 }
-*/
+
 
 *,
 *::before,
