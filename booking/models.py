@@ -21,9 +21,17 @@ class Booking(models.Model):
         return self.name
 
 
-class Use(models.Model):
+class User(models.Model):
     email = models.EmailField()
     password = models.CharField(max_length=80)
 
     class Meta:
         ordering = ['email']
+
+class Now_playing(models.Model):
+    play = models.IntegerField(choices=PLAYS)
+    status = models.IntegerField(choices=STATUS, default=0)
+    seats = models.IntegerField(41)
+
+    class Meta:
+        ordering = ['status']
