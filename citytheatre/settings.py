@@ -13,13 +13,13 @@ import os
 from pathlib import Path
 
 import dj_database_url
-if os.path.isfile('env.py'):
+if os.path.isfile("env.py"):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-#BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+BASE_DIR = Path(__file__).resolve().parent.parent
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
@@ -35,6 +35,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["mb2test.herokuapp.com", "localhost"]
 
+X_FRAME_OPTIONS ='SAMEORIGIN'
 
 # Application definition
 
@@ -47,6 +48,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'booking',
 ]
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,7 +69,7 @@ ROOT_URLCONF = 'citytheatre.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
