@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Orbitron&display=swap" rel="stylesheet">  
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet"> 
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{% static 'css/style-clean-blog.css' %}" rel="stylesheet" />
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
@@ -21,22 +21,24 @@
     </script>
     <!-- Custom CSS-->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styleclean-blog.css' %}" rel="stylesheet" />
     <title>City Theatre</title>
 </head>
 <body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.html">City Theatre</a>
+            <a class="navbar-brand" href= "{% url 'home' %}">City Theatre</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="btn btn-success px-lg-3 py-3 py-lg-4 text-uppercase" href="post.html">Log in/sign up</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Contact</a></li>
+                    <li class="nav-item"><a class="btn btn-success text-uppercase" href="#!">Get tickets!</a></li>
                 </ul>
             </div>
         </div>
@@ -90,6 +92,6 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+   
 </body>
 </html>

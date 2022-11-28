@@ -19,3 +19,8 @@ h1, .h1, .subheading, .navbar-brand {
 .btn {
     border-radius: 5%;
 }
+
+.card {
+    display: inline-block;
+    
+}
