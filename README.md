@@ -37,14 +37,53 @@ All fonts are san serif due to it being easier to read on a screen. The fonts i 
 
 ## Features
 ### Starting page
+The starting page has a big image trying to make the user buy tickets for a play. Below that all plays are shown. Last of all there is a quote from the director. 
+![Starting page]
+
+### Plays page
+Shows all the plays and when you can watch them. This is where you choose what tickets you want to reserv. The database is used to keep track of dates and which times plays have seats left.
+![Plays page]
+
+### Login/sign in page
+Two versions of the same page. One for signing up and one for logging in. They are built the same way exept the sign up page has an extra field for confirming password. The inputed data is either saved in the database (in the case of a sign up), or checked against the info in the database (in the case of a log in).
+![Login page]
+
+### User page
+It is used to show the user their booking and to make it possible for them to change or delete their bookings. On this page the login putton is a log out button instead. The database is used for the booking information.
+![User page]
+
+### About page
+The about page is a simple page with info about the theatre and on job openings.
+![about page]
 
 ### Potential features
+- A function that sends an email to the user containing all booking information. 
 
 ## Testing
+This project was thested in many different ways. It was tested with both software and maually.
 
 ### User stories
+I want the costumer to be able to:
+- See what dates the plays are.
+- Make bookings, reebook and cancel bookings.
+- See their booking information.
+
+I want the admin to be able to:
+- See the bookings made.
+ - The admin can see the bookings thru the admin page.
+- Change and cancel bookings.
+ - It is also possible to change or cancel bookings on the admin page.
 
 ### Device testing
+Since I used a premade template, most of the device size adaption were already made. I still checked on some devices to make sure everything was working.
+
+I tested the website on these devices:
+- iPhone SE (2nd generation)
+- iPad
+- Desktop computer (1440p)
+- Laptop (ACER aspire 5)
+
+I also tested the website on Mozilla developer tools:
 
 ### Browser testing
 
@@ -60,6 +99,7 @@ All fonts are san serif due to it being easier to read on a screen. The fonts i 
 
 ### Bugs
 #### Fixed bugs
+I had a bug where the site would not deploy to heroku. I managed to fix this by looking at the error messages and solving them one by one. To do this I used help from my fellow students (via slack), stackoverflow and Code Institute's tutors. 
 
 #### Unfixed bugs
 
@@ -84,7 +124,7 @@ This project was deployed with Heroku.
 ## Credits
 
 ### Code
-The Backend part of the code is based on Code Institute's "I think therefore i blog" walkthru project. The front end part is madde usiong a modified version of the [Clean blog](https://startbootstrap.com/theme/clean-blog) template from [startbootstrap](startbootstrap.com).
+The Backend part of the code is based on Code Institute's "I think therefore i blog" walkthru project. The front end part is madde using a modified version of the [Clean blog](https://startbootstrap.com/theme/clean-blog) template from [startbootstrap](startbootstrap.com).
 
 ### Content and media
 The pictures for this project is from [pexels.com](www.pexels.com). The [christmas picture](https://www.pexels.com/photo/gold-christmas-bauble-246351/) is from the user Valeria Vinnik, the [house picture](https://www.pexels.com/photo/stone-building-on-a-countryside-5667618/) is from the user ROMAN ODINTSOV, the [theatre picture](https://www.pexels.com/photo/theater-interior-109669/) is from the user Donald Tong, the [jobs picture](https://www.pexels.com/photo/depth-of-field-photo-of-man-sitting-on-chair-while-holding-cup-in-front-of-table-927451/) is from the user Andrea Piacquadio, and the [head director picture](https://www.pexels.com/photo/man-wearing-white-dress-shirt-and-black-blazer-2182970/) is from the user LinkedIn Sales Navigator.
