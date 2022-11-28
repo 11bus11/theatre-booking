@@ -1,15 +1,18 @@
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import Booking
 from .models import NowPlaying
 
+
+
 class PlayList(generic.ListView):
     model = NowPlaying
-    queryset = 
-    template_name = "plays.html"
+    queryset = NowPlaying.objects.all()
+    template_name = "index.html"
 
 class Booking(generic.ListView):
     model = Booking
-    queryset = 
+    queryset =NowPlaying.objects.all()
     template_name = "user.html"
 
