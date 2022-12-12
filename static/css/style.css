@@ -4,11 +4,34 @@
     --green-btn: #55CB1E;
 }
 
+#cont {
+    background-color: var(--light-red);
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+#nav {
+    background-color: var(--dark-red);
+}
+
+.card-deck {
+    row-gap: 8px;
+}
+
+#hook {
+    font-family: 'Pinyon Script', cursive;
+}
+
+.navbar, .container-fluid, .footer {
+    width: 100;
+    border: 0cm;
+}
+
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, .nav-item {
     font-family: 'Mukta', sans-serif;
 }
 
-h1, .h1, .subheading, .navbar-brand {
+h1, .h1, .subheading, .navbar-brand, .site-heading {
     font-family: 'Pinyon Script', cursive;
 }
 
@@ -23,4 +46,8 @@ h1, .h1, .subheading, .navbar-brand {
 .card {
     display: inline-block;
     
+}
+
+i {
+    color: black;
 }

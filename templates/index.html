@@ -1,13 +1,14 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
     <!-- Page Header-->
-    <header class="masthead" src="../images/christmas.jpg" >
+    <header class="masthead" style= "background-image: url(`../image/christmas.jpg`)">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="site-heading">
-                        <h1>Enjoy a classic christmas story! <br> Now showing "A christmas carol".</h1>
+                        <h1 id="hook">Enjoy a classic christmas story! <br> Now showing "A christmas carol".</h1>
                         <div class="d-flex justify-content-center mb-4"><a class="btn btn-success text-uppercase" href="#!">Get tickets!</a></div>
                     </div>
                 </div>
@@ -17,7 +18,7 @@
     <!-- Main Content-->
     <div class="card-deck row justify-content-center">
         <div class="card col-md-5">
-            <img class="card-img-top" src="" alt="Christmas ornaments in tree">
+            <img class="card-img-top" src="{{MEDIA_URL}}christmas.jpg" alt="Christmas ornaments in tree">
             <div class="card-body">
                 <h5 class="card-title">A christmas carol</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
