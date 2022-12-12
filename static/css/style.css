@@ -14,6 +14,10 @@
     background-color: var(--dark-red);
 }
 
+.nav-item {
+    color: white;
+}
+
 .card-deck {
     row-gap: 8px;
 }
@@ -33,6 +37,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, .nav-item {
 
 h1, .h1, .subheading, .navbar-brand, .site-heading {
     font-family: 'Pinyon Script', cursive;
+    
 }
 
 .navbar-brand {
@@ -49,5 +54,10 @@ h1, .h1, .subheading, .navbar-brand, .site-heading {
 }
 
 i {
-    color: black;
+    color: white;
+}
+
+#director-img {
+    width: 25vw;
+    border-radius: 50%;
 }
