@@ -36,6 +36,11 @@ These are the innitial wireframes.
 All fonts are san serif due to it being easier to read on a screen. The fonts i chose were Mukta for the content, and Pinyon Script for "city theatre" at the top. It is also used for some of the text ont he log in page and the promotional image.
 
 ## Features
+### Navigation and footer
+The navigation bar changes between being a hamburger menue and a standard navigation bar depending on the screen size. It has links to all pages and a button that sends you to the login page.
+
+In the footer you can find the adress of the theatre and links to all relevant social media.
+
 ### Starting page
 The starting page has a big image trying to make the user buy tickets for a play. Below that all plays are shown. Last of all there is a quote from the director. 
 ![Starting page]
@@ -55,6 +60,9 @@ It is used to show the user their booking and to make it possible for them to ch
 ### About page
 The about page is a simple page with info about the theatre and on job openings.
 ![about page]
+
+### Admin page
+Shows the admin what bookings are placed. On this page the admin can also change, create or delete bookings. 
 
 ### Potential features
 - A function that sends an email to the user containing all booking information. 
@@ -86,6 +94,11 @@ I tested the website on these devices:
 I also tested the website on Mozilla developer tools:
 
 ### Browser testing
+The website was tested on these browsers:
+- Mozilla Firefox
+- Google Crome
+- Microsoft Edge
+- Safari
 
 ### Peer review
 
@@ -119,12 +132,11 @@ This project was deployed with Heroku.
     - Connect your account and choose a repository to deploy from.
     - Choose either Automatic or Manual deployment (recommended).
 - Make sure the live site is working.
- 
 
 ## Credits
 
 ### Code
-The Backend part of the code is based on Code Institute's "I think therefore i blog" walkthru project. The front end part is madde using a modified version of the [Clean blog](https://startbootstrap.com/theme/clean-blog) template from [startbootstrap](startbootstrap.com).
+The Backend part of the code is based on Code Institute's "I think therefore I blog" walkthru project. The front end part is madde using a modified version of the [Clean blog](https://startbootstrap.com/theme/clean-blog) template from [startbootstrap](startbootstrap.com).
 
 ### Content and media
 The pictures for this project is from [pexels.com](www.pexels.com). The [christmas picture](https://www.pexels.com/photo/gold-christmas-bauble-246351/) is from the user Valeria Vinnik, the [house picture](https://www.pexels.com/photo/stone-building-on-a-countryside-5667618/) is from the user ROMAN ODINTSOV, the [theatre picture](https://www.pexels.com/photo/theater-interior-109669/) is from the user Donald Tong, the [jobs picture](https://www.pexels.com/photo/depth-of-field-photo-of-man-sitting-on-chair-while-holding-cup-in-front-of-table-927451/) is from the user Andrea Piacquadio, and the [head director picture](https://www.pexels.com/photo/man-wearing-white-dress-shirt-and-black-blazer-2182970/) is from the user LinkedIn Sales Navigator.
