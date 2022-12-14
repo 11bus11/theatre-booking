@@ -6,10 +6,20 @@ from .models import NowPlaying
 
 
 
-class PlayList(generic.ListView):
+class HomePage(generic.ListView):
     model = NowPlaying
     queryset = NowPlaying.objects.all()
     template_name = "index.html"
+
+class PlayList(generic.ListView):
+    model = NowPlaying
+    queryset = NowPlaying.objects.all()
+    template_name = "plays.html"
+
+class AboutTheatre(generic.ListView):
+    model = NowPlaying
+    queryset = NowPlaying.objects.all()
+    template_name = "about.html"
 
 class Booking(generic.ListView):
     model = Booking

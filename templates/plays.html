@@ -1,13 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Our plays</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+    <!-- Main Content-->
+    <div class="container">
+        <div class="card-deck row justify-content-around">
+            <div class="card col-11">
+                <img class="card-img-top" src="{{MEDIA_URL}}christmas.jpg" alt="Christmas ornaments in tree">
+                <div class="card-body">
+                    <h5 class="card-title">A christmas carol</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <div>
+                        <button></button>
+                        <button></button>
+                    </div>
+                    <p class="card-text"><a class="text-muted text-uppercase" href="">Tickets</a></p>
+                </div>
+            </div>
+            <div class="card col-11">
+                <img class="card-img-top" src="{{MEDIA_URL}}stone-house.jpg" alt="Stone ruin">
+                <div class="card-body">
+                    <h5 class="card-title">Phantom of the opera</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <p class="card-text"><a class="text-muted text-uppercase" href="">Tickets</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck row justify-content-center">
+            <div class="card col-11">
+                <img class="card-img-top justify-content-around" id="director-img" src="{{MEDIA_URL}}head-editor.jpg" alt="head photo man">
+                <div class="card-body">
+                    <h5 class="card-title">A christmas carol</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <p class="card-text"><a class="text-muted text-uppercase" href="">Tickets</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %} 

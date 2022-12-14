@@ -19,7 +19,8 @@
 }
 
 .card-deck {
-    row-gap: 8px;
+    left: auto !important;
+
 }
 
 #hook {
@@ -60,4 +61,8 @@ i {
 #director-img {
     width: 25vw;
     border-radius: 50%;
+}
+
+img {
+    margin-top: 2vh;
 }
