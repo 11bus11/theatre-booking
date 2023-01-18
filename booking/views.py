@@ -1,28 +1,21 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Booking
-from .models import NowPlaying
+from .models import Booking, NowPlaying, Play
 
 
+def PlayBookingPage(request):
+    model_play = Play
+    model_nowplaying = NowPlaying
+    model_booking = Booking
+    template = "booking/play_booking.html"
 
-class HomePage(generic.ListView):
-    model = NowPlaying
-    queryset = NowPlaying.objects.all()
-    template_name = "index.html"
+#def AboutTheatre(request):
+#    model = NowPlaying
+#    queryset = NowPlaying.objects.all()
+#    template_name = "about.html"
 
-class PlayList(generic.ListView):
-    model = NowPlaying
-    queryset = NowPlaying.objects.all()
-    template_name = "plays.html"
-
-class AboutTheatre(generic.ListView):
-    model = NowPlaying
-    queryset = NowPlaying.objects.all()
-    template_name = "about.html"
-
-class Booking(generic.ListView):
+def Booking(request):
     model = Booking
-    queryset =NowPlaying.objects.all()
     template_name = "user.html"
 
