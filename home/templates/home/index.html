@@ -18,34 +18,34 @@
     </header>
     <!-- Main Content-->
     <div class="container mx-auto">
-        {% for plays in play %}
         <div class="card-deck row justify-content-around ">
+            {% for play in plays %}
             <div class="card col-11 col-md-5 col-sm-5 col-xs-5">
-                <img class="card-img-top" src="{{MEDIA_URL}}christmas.jpg" alt="Christmas ornaments in tree">
+                <img class="card-img-top" src="{{MEDIA_URL}}{{ play.image }}" alt="play theme image. {{ play.name }}">
                 <div class="card-body">
-                    <h5 class="card-title">A christmas carol</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <h5 class="card-title">{{ play.name }}</h5>
+                    <p class="card-text">{{ play.description }}</p>
                     <p class="card-text"><a class="text-muted text-uppercase" href="">Tickets</a></p>
                 </div>
             </div>
-        </div>
-        {% endfor %}
+            {% endfor %}
 
-        <div class=" row justify-content-center col-12" id="director">
-            <div class="col-4 col-md-2 d-flex d-flex-inline">
-                <img class="col-12" id="director-img" src="{{MEDIA_URL}}head-editor.jpg" alt="head photo man">
+            <div class=" row justify-content-around col-11" id="director">
+                <div class="col-4 col-lg-2 d-flex d-flex-inline">
+                    <img class="col-12" id="director-img" src="{{MEDIA_URL}}head-editor.jpg" alt="head photo man">
+                </div>
+                <div class="text-center col-6 d-flex d-flex-inline">
+                    <figure>
+                    <blockquote class="blockquote mb-4">
+                        <p>
+                            <span class="font-italic">"Our plays are made with passion and love for the craft."</span>
+                        </p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Thomas Gillan, Head Director
+                    </figcaption>
+                </figure>
             </div>
-            <div class="text-center col-6 d-flex d-flex-inline">
-                <figure>
-                <blockquote class="blockquote mb-4">
-                    <p>
-                        <span class="font-italic">"Our plays are made with passion and love for the craft."</span>
-                    </p>
-                </blockquote>
-                <figcaption class="blockquote-footer">
-                    Thomas Gillan, Head Director
-                </figcaption>
-            </figure>
         </div>
     </div>
 
