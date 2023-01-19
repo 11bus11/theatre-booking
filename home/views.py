@@ -6,8 +6,11 @@ from booking.models import Play
 
 def HomePage(request):
     model = Play
-    queryset = Play.objects.all()
+    plays = Play.objects.all()
 
     template = "home/index.html"
+    context = {
+            'plays': plays,
+        }
 
-    return render(request, template)
+    return render(request, template, context)

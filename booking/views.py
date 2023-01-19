@@ -4,11 +4,19 @@ from django.http import HttpResponseRedirect
 from .models import Booking, NowPlaying, Play
 
 
-def PlayBookingPage(request):
+def NowPlaying(request):
     model_play = Play
     model_nowplaying = NowPlaying
-    model_booking = Booking
+
     template = "booking/play_booking.html"
+    
+    context = {
+        'model_play': model_play,
+        'model_nowplaying': model_nowplaying,
+    }
+
+    return render(request, template, context)
+
 
 #def AboutTheatre(request):
 #    model = NowPlaying

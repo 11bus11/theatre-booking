@@ -18,6 +18,11 @@
     color: white;
 }
 
+header.masthead {
+    background-color: RGBA(108, 117, 125, 1);
+    
+}
+
 .card-deck {
     left: auto !important;
 
@@ -59,10 +64,16 @@ i {
 }
 
 #director-img {
-    width: 25vw;
     border-radius: 50%;
 }
 
 img {
     margin-top: 2vh;
+}
+
+#director {
+    background-color: white;
+    border-radius: 1%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
