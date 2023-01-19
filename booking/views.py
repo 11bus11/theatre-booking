@@ -18,11 +18,6 @@ def NowPlaying(request):
     return render(request, template, context)
 
 
-#def AboutTheatre(request):
-#    model = NowPlaying
-#    queryset = NowPlaying.objects.all()
-#    template_name = "about.html"
-
 def Booking(request):
     model = Booking
     template_name = "user.html"
