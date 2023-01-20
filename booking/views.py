@@ -4,21 +4,32 @@ from django.http import HttpResponseRedirect
 from .models import Booking, NowPlaying, Play
 
 
-def NowPlaying(request):
-    model_play = Play
-    model_nowplaying = NowPlaying
+def play_showings(request):
+    plays = Play.objects.all()
+    showings = NowPlaying.objects.all()
 
-    template = "booking/play_booking.html"
-    
+    template = "booking/plays.html"
     context = {
-        'model_play': model_play,
-        'model_nowplaying': model_nowplaying,
+        'plays': plays,
+        'showings': showings,
     }
 
     return render(request, template, context)
 
+def play_dates(request, plays_id):
+    play_instance = get_object_or_404(Plays, pk=plays_id)
+    showings = NowPlaying.objects.all()
 
-def Booking(request):
-    model = Booking
-    template_name = "user.html"
+    url = "booking/plays.html"
+
+    context = {
+        'play_instance': play_instance,
+        'showings': showings,
+    }
+
+    return redirect(url)
+
+#def Booking(request):
+#    model = Booking
+#    template_name = "user.html"
 

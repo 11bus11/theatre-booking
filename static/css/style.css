@@ -63,8 +63,8 @@ h1, .h1, h2, .h2, .subheading, .navbar-brand, .site-heading {
     
 }
 
-#ticket-choice {
-    top: 10vh;
+#ticket-choice, #play-choice {
+    margin-top: 10vh;
 }
 
 i {
