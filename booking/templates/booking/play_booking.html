@@ -17,18 +17,24 @@
 
         <div class="card-deck row justify-content-around">
             <div class="card col-6">
-                <img class="card-img-top justify-content-around" src="{{MEDIA_URL}}christmas.jpg" alt="head photo man">
+                <img class="card-img-top justify-content-around" src="{{MEDIA_URL}}christmas.jpg" alt="">
                 <div class="card-body">
-                    <h5 class="card-title">A christmas carol</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <div class="">
-                        <a href=""><div class="btn btn-success">Test</div></a>
-                        <a href=""><div class="btn btn-success">Test</div></a>
-                        <a href=""><div class="btn btn-success">Test</div></a>
-                        <a href=""><div class="btn btn-success">Test</div></a>
-                        
-
-                    </div>
+                    <form class="form" action="{% url 'booking_date' play.id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row mb-2">
+                            <div class="col-12">
+                                <p class="mt-3"><strong>Quantity:</strong></p>
+                                <div class="form-group col-10 col-md-7 col-lg-4">
+                                    <div class="input-group input-group-{{ play.id }}">
+                                        <input class="form-control qty_input id_qty_{{ play.id }}" type="number"
+                                            name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ play.id }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

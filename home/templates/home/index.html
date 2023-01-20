@@ -25,7 +25,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ play.name }}</h5>
                     <p class="card-text">{{ play.description }}</p>
-                    <p class="card-text"><a class="text-muted text-uppercase" href="">Tickets</a></p>
+                    <p class="card-text"><a class="text-muted text-uppercase" href="{% url 'booking_date' play.id %}">Tickets</a></p>
                 </div>
             </div>
             {% endfor %}
