@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from useraccount.models import UserProfile
 
 # Create your models here.
 
@@ -26,6 +27,9 @@ class Booking(models.Model):
     play = models.ForeignKey(Play, on_delete=models.CASCADE)
     viewing = models.ForeignKey(NowPlaying, on_delete=models.CASCADE)
     amount = models.IntegerField(default=1)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True,
+                                     related_name='orders')
     name = models.CharField(max_length=200)
     email = models.EmailField()
 

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <!-- Content -->
+    <div class="container" id="plays-choice">
+        <div class="card-deck row justify-content-around">
+            <div class="card col-11">
+                <div class="card-body">
+                    <h5 class="card-title">My profile</h5>
+                        <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                            {% csrf_token %}
+                            {{ form }}
+                            <br>
+                            <button class="btn btn-success mt-2">Save information</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %} 
