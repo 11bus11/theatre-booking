@@ -37,13 +37,15 @@ class NowPlayingAdmin(admin.ModelAdmin):
 
 class BookingAdmin(admin.ModelAdmin):
     list_display = (
-        'playing',
+        'play',
+        'viewing',
+        'amount',
         'name',
         'email',
     )
 
     ordering = (
-        '-playing',
+        '-play',
     )
 
 

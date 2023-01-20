@@ -13,9 +13,9 @@ class Play( models.Model):
 
 
 class NowPlaying(models.Model):
-    play = models.ForeignKey(Play, on_delete=models.CASCADE )
+    play = models.ForeignKey(Play, on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS, default=0)
-    seats = models.IntegerField(41)
+    seats = models.IntegerField(default=41)
     date = models.DateField()
     time = models.TimeField()
 
@@ -23,13 +23,14 @@ class NowPlaying(models.Model):
         ordering = ['-date']
 
 class Booking(models.Model):
-    playing = models.ForeignKey(NowPlaying, on_delete=models.CASCADE)
+    play = models.ForeignKey(Play, on_delete=models.CASCADE)
+    viewing = models.ForeignKey(NowPlaying, on_delete=models.CASCADE)
+    amount = models.IntegerField(default=1)
     name = models.CharField(max_length=200)
-    email = models.ForeignKey(User, on_delete=models.CASCADE)
-
+    email = models.EmailField()
 
     class Meta:
-        ordering = ['-playing']
+        ordering = ['play']
 
     def __str__(self):
         return self.name
