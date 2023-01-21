@@ -18,8 +18,8 @@ def play_showings(request):
 
     return render(request, template, context)
 
-def play_dates(request, plays_id):
-    play_instance = get_object_or_404(Plays, pk=plays_id)
+def play_dates(request, play_id):
+    play_instance = get_object_or_404(Play, pk=play_id)
     showings = NowPlaying.objects.all()
 
     template = "booking/play_booking.html"
