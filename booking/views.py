@@ -10,7 +10,7 @@ def play_showings(request):
     plays = Play.objects.all()
     showings = NowPlaying.objects.all()
 
-    template = "booking/play_booking.html"
+    template = "booking/plays.html"
     context = {
         'plays': plays,
         'showings': showings,
