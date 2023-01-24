@@ -2,13 +2,6 @@ from django.contrib import admin
 from .models import Booking, NowPlaying, Play
 #from django_summernote.admin import SummernoteModelAdmin
 
-
-#class BookingAdmin(SummernoteModelAdmin):
-#
- #   summernote_fields = ('time')
- #   list_filter = ('date')
- #   admin.site.register(Booking)
-
 class PlayAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -36,6 +29,10 @@ class NowPlayingAdmin(admin.ModelAdmin):
 
 
 class BookingAdmin(admin.ModelAdmin):
+    readonly_fields = ('play', 'viewing')
+
+    fields = ('amount', 'name', 'email')
+
     list_display = (
         'play',
         'viewing',
@@ -44,9 +41,7 @@ class BookingAdmin(admin.ModelAdmin):
         'email',
     )
 
-    ordering = (
-        '-play',
-    )
+    ordering = ('play',)
 
 
 admin.site.register(Play, PlayAdmin)

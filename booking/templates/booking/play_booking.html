@@ -10,25 +10,25 @@
             <div class="card col-6" >
                 <div class="card-body">
                     <h5 class="card-title">Buy tickets</h5>
-                    <p class="card-text">Choose a date and click on a time to buy your tickets. The number of tickets can be chosen later.</p>
+                    <p class="card-text">Choose a play and click on tickets. This will take you to the page for choosing what date you want to see the play.</p>
                 </div>
             </div>
         </div>
 
         <div class="card-deck row justify-content-around">
-            <div class="card col-6">
-                <img class="card-img-top justify-content-around" src="{{MEDIA_URL}}{{ play_instance.image }}" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">{{ play_instance.name }}</h5>
-                    <p class="card-text">{{ play_instance.description }}</p>
-                    <p>Price: 60£</p>
-                    {% for showings in showings %}
-                    {% if showings.play == play_instance %}
-                    <a href=""><div class="btn btn-outline-dark">{{ showings.date }}</div></a>
-                    {% endif %}
-                    {% endfor %}
+            {% for play in plays %}
+            <div class="row col-12">
+                <div class="card col-6">
+                    <img class="card-img-top" src="{{MEDIA_URL}}{{ play.image }}" alt="play theme image. {{ play.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ play.name }}</h5>
+                        <p class="card-text">{{ play.description }}</p>
+                        <p>Price: 60£</p>
+                        <p class="card-text"><a class="text-muted text-uppercase" href="{% url 'booking_date' play.id %}">Tickets</a></p>
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %} 

@@ -3,6 +3,25 @@ from useraccount.models import UserProfile
 from .models import Play, NowPlaying, Booking
 
 
+class BookingForm(forms.ModelForm):
+    class Meta:
+        model_booking = Booking
+        exclude = ("user_profile",)
+
+    def __init__(self, *args, **kwargs):
+        """
+        Add placeholders and classes, remove auto-generated
+        labels and set autofocus on first field
+        """
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'play': 'Play',
+            'viewing': 'Date and time',
+            'amount': 'Number of tickets',
+            'name': 'Full name',
+            'email': 'Email',
+        }
+
 class PlayForm(forms.ModelForm):
     class Meta:
         model_play = Play
@@ -24,7 +43,7 @@ class PlayForm(forms.ModelForm):
 class NowPlayingForm(forms.ModelForm):
     class Meta:
         model = NowPlaying
-        exclude = ('user',)
+        exclude = ()
 
     def __init__(self, *args, **kwargs):
         """

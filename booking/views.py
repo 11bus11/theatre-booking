@@ -6,14 +6,12 @@ from .models import Booking, NowPlaying, Play
 from .forms import PlayForm, NowPlayingForm
 
 
-def play_showings(request):
+def plays(request):
     plays = Play.objects.all()
-    showings = NowPlaying.objects.all()
 
-    template = "booking/plays.html"
+    template = "booking/play_booking.html"
     context = {
         'plays': plays,
-        'showings': showings,
     }
 
     return render(request, template, context)
@@ -22,7 +20,7 @@ def play_dates(request, play_id):
     play_instance = get_object_or_404(Play, pk=play_id)
     showings = NowPlaying.objects.all()
 
-    template = "booking/play_booking.html"
+    template = "booking/date_booking.html"
 
     context = {
         'play_instance': play_instance,
@@ -31,9 +29,30 @@ def play_dates(request, play_id):
 
     return render(request, template, context)
 
-#def Booking(request):
-#    model = Booking
-#    template_name = "user.html"
+def Booking(request, nowplaying_id):
+    showing_instance = get_object_or_404(NowPlaying, pk=nowplaying_id)
+
+    form_data = {
+        'name': request.POST['name'],
+        'email': request.POST['email'],
+    }
+
+    booking_form = BookingForm(form_data)
+    if booking_form.is_valid():
+        booking = booking_form.save(commit=False)
+        order.save()
+        return redirect(reverse('checkout_success',
+                                args=[order.order_number]))
+    else:
+        messages.error(request, ('There was an error with your form. '
+                                     'Please double check your information.'))
+    template = "booking/form_booking.html"
+    context = {
+        'showing_instance': play_instance,
+        'booking_form': booking_form
+    }
+
+    return render(request, template, context)
 
 @login_required
 def add_play(request):

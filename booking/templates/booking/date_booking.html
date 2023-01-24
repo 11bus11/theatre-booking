@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+    <!-- Main Content-->
+    
+    <div class="container" id="ticket-choice">
+        <div class="card-deck row justify-content-around ">
+            <div class="card col-6" >
+                <div class="card-body">
+                    <h5 class="card-title">Buy tickets</h5>
+                    <p class="card-text">Choose a date and click on a time to buy your tickets. The number of tickets can be chosen later.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-deck row justify-content-around">
+            <div class="card col-6">
+                <img class="card-img-top justify-content-around" src="{{MEDIA_URL}}{{ play_instance.image }}" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{ play_instance.name }}</h5>
+                    <p class="card-text">{{ play_instance.description }}</p>
+                    <p>Price: 60£</p>
+                    {% for showings in showings %}
+                    {% if showings.play == play_instance %}
+                    <a href=""><div class="btn btn-outline-dark">{{ showings.date }}</div></a>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %} 
