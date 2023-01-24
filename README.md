@@ -42,30 +42,36 @@ The navigation bar changes between being a hamburger menue and a standard naviga
 In the footer you can find the adress of the theatre and links to all relevant social media.
 
 ### Starting page
-The starting page has a big image trying to make the user buy tickets for a play. Below that all plays are shown. Last of all there is a quote from the director. 
+The starting page has a big image trying to make the user buy tickets for a play. Below that all plays are shown (click "TICKETS" to see dates available). Last of all there is a quote from the director. 
 ![Starting page]
 
 ### Plays page
-Shows all the plays and when you can watch them. This is where you choose what tickets you want to reserv. The database is used to keep track of dates and which times plays have seats left.
+Shows all the plays. This is where you choose what play you want to watch. When you click on "TICKETS", you will be sent to a page where you can choose what date and time you want to see the play.
 ![Plays page]
+
+### Dates page
+This is where you choose what date and time you want to watch the lay. The page only shows the times available for the chosen play. If you click on one of the times, you will be sent to the booking form page, where you can add contact information and specify how many tickets you want to reserv.
+
+The database is used to keep track of dates and which times plays have seats left. The ones that have seats left are shown in green, while the other ones are shown in grey. The grey ones does not take you anywhere.
 
 ### Login/sign in page
 Two versions of the same page. One for signing up and one for logging in. They are built the same way exept the sign up page has an extra field for confirming password. The inputed data is either saved in the database (in the case of a sign up), or checked against the info in the database (in the case of a log in).
 ![Login page]
 
 ### User page
-It is used to show the user their booking and to make it possible for them to change or delete their bookings. On this page the login putton is a log out button instead. The database is used for the booking information.
+It is used to show the user their booking and to make it possible for them to change or delete their bookings. The database is used for the booking information. Here you can also add your user information.
 ![User page]
 
 ### About page
-The about page is a simple page with info about the theatre and on job openings.
+The about page is a simple page with info about the theatre and potential job openings.
 ![about page]
 
-### Admin page
-Shows the admin what bookings are placed. On this page the admin can also change, create or delete bookings. 
+### Admin functionality
+A page on the frontend shows the admin what bookings are placed. On this page the admin can also change, create or delete bookings. On another page the admin can add plays, and when they are logged in they can edit the plays from the plays page.
 
 ### Potential features
 - A function that sends an email to the user containing all booking information. 
+- More robust admin functionality
 
 ## Testing
 This project was thested in many different ways. It was tested with both software and maually.
@@ -85,7 +91,7 @@ I want the admin to be able to:
 ### Device testing
 Since I used a premade template, most of the device size adaption were already made. I still checked on some devices to make sure everything was working.
 
-I tested the website on these devices:
+I tested the website (natively) on these devices:
 - iPhone SE (2nd generation)
 - iPad
 - Desktop computer (1440p)
@@ -99,6 +105,7 @@ The website was tested on these browsers:
 - Google Crome
 - Microsoft Edge
 - Safari
+- DuckDuckGo (mobile)
 
 ### Peer review
 
@@ -137,11 +144,11 @@ This project was deployed with Heroku.
 ## Credits
 
 ### Code
-The Backend part of the code is based on Code Institute's "I think therefore I blog" walkthru project. The front end part is madde using a modified version of the [Clean blog](https://startbootstrap.com/theme/clean-blog) template from [startbootstrap](startbootstrap.com).
+The Backend part of the code is based on Code Institute's "I think therefore I blog" walkthru project. Some small parts are also based on the [Boutique Ado]() project from Code Institute. The front end part is made using a modified version of the [Clean blog](https://startbootstrap.com/theme/clean-blog) template from [startbootstrap](startbootstrap.com).
 
 ### Content and media
 The pictures for this project is from [pexels.com](www.pexels.com). The [christmas picture](https://www.pexels.com/photo/gold-christmas-bauble-246351/) is from the user Valeria Vinnik, the [house picture](https://www.pexels.com/photo/stone-building-on-a-countryside-5667618/) is from the user ROMAN ODINTSOV, the [theatre picture](https://www.pexels.com/photo/theater-interior-109669/) is from the user Donald Tong, the [jobs picture](https://www.pexels.com/photo/depth-of-field-photo-of-man-sitting-on-chair-while-holding-cup-in-front-of-table-927451/) is from the user Andrea Piacquadio, and the [head director picture](https://www.pexels.com/photo/man-wearing-white-dress-shirt-and-black-blazer-2182970/) is from the user LinkedIn Sales Navigator.
 
 All icons are from [font awesome](https://fontawesome.com/icons), and the fonts are from [Google fonts](https://fonts.google.com/).
 
-Erik Vodopivec Forsman, 2022
+Erik Vodopivec Forsman, 2023
