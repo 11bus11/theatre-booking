@@ -56,21 +56,17 @@ def Booking(request, nowplaying_id):
 def add_play(request):
     """ Add a play to the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = playForm(request.POST, request.FILES)
+        form = PlayForm(request.POST, request.FILES)
         if form.is_valid():
             play = form.save()
-            messages.success(request, 'Successfully added play!')
-            return redirect(reverse('play_detail', args=[play.id]))
+            return redirect(reverse('home'))
         else:
-            messages.error(request,
-                           ('Failed to add play. '
-                            'Please ensure the form is valid.'))
+            print("error")
     else:
-        form = playForm()
+        form = PlayForm()
 
     template = 'booking/add_play.html'
     context = {
@@ -83,29 +79,24 @@ def add_play(request):
 @login_required
 def edit_play(request, play_id):
     """ Edit a play in the store """
+    play_instance = get_object_or_404(Play, pk=play_id)
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
-    play = get_object_or_404(play, pk=play_id)
     if request.method == 'POST':
-        form = playForm(request.POST, request.FILES, instance=play)
+        form = PlayForm(request.POST, request.FILES, instance=play_instance)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated play!')
-            return redirect(reverse('play_detail', args=[play.id]))
+            return redirect(reverse('home'))
         else:
-            messages.error(request,
-                           ('Failed to update play. '
-                            'Please ensure the form is valid.'))
+            print("error")
     else:
-        form = playForm(instance=play)
-        messages.info(request, f'You are editing {play.name}')
+        form = PlayForm(instance=play_instance)
 
     template = 'booking/edit_play.html'
     context = {
         'form': form,
-        'play': play,
+        'play_instance': play_instance,
     }
 
     return render(request, template, context)
@@ -115,11 +106,10 @@ def edit_play(request, play_id):
 def delete_play(request, play_id):
     """ Delete a play from the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+        return redirect(reverse('plays'))
 
-    play = get_object_or_404(play, pk=play_id)
-    play.delete()
-    messages.success(request, 'play deleted!')
-    return redirect(reverse('plays'))
+    play_instance = get_object_or_404(Play, pk=play_id)
+    play_instance.delete()
+    print("delete")
+    return redirect(reverse('home'))
 

@@ -20,6 +20,8 @@
                 <img class="card-img-top justify-content-around" src="{{MEDIA_URL}}{{ play_instance.image }}" alt="">
                 <div class="card-body">
                     <h5 class="card-title">{{ play_instance.name }}</h5>
+                    <a href="{% url 'edit_play' play_instance.id %}"><button class="btn btn-outline-dark">Edit</button></a>
+                    <a href="{% url 'delete_play' play_instance.id %}"><button class="btn btn-danger">Delete</button></a>
                     <p class="card-text">{{ play_instance.description }}</p>
                     <p>Price: 60£</p>
                     {% for showings in showings %}

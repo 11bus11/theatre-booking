@@ -24,7 +24,7 @@ class BookingForm(forms.ModelForm):
 
 class PlayForm(forms.ModelForm):
     class Meta:
-        model_play = Play
+        model = Play
         exclude = ()
 
     def __init__(self, *args, **kwargs):
