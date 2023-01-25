@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from .models import Booking, NowPlaying, Play
-from .forms import PlayForm, NowPlayingForm
+from .forms import PlayForm, NowPlayingForm, BookingForm
 
 
 def plays(request):
@@ -31,24 +31,25 @@ def play_dates(request, play_id):
 
 def Booking(request, nowplaying_id):
     showing_instance = get_object_or_404(NowPlaying, pk=nowplaying_id)
+    booking_form = BookingForm()
 
-    form_data = {
-        'name': request.POST['name'],
-        'email': request.POST['email'],
-    }
+    if request.method == 'POST':
+        form_data = {
+            'name': request.POST['name'],
+            'email': request.POST['email'],
+        }
 
-    booking_form = BookingForm(form_data)
-    if booking_form.is_valid():
-        booking = booking_form.save(commit=False)
-        order.save()
-        return redirect(reverse('checkout_success',
-                                args=[order.order_number]))
-    else:
-        messages.error(request, ('There was an error with your form. '
-                                     'Please double check your information.'))
+        booking_form = BookingForm(form_data)
+        if booking_form.is_valid():
+            booking = booking_form.save(commit=False)
+            booking.save()
+            return redirect(reverse('home'))
+        else:
+            print("error")
+    
     template = "booking/form_booking.html"
     context = {
-        'showing_instance': play_instance,
+        'showing_instance': showing_instance,
         'booking_form': booking_form
     }
 

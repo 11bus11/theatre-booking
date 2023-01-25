@@ -24,7 +24,7 @@
                     <p>Price: 60£</p>
                     {% for showings in showings %}
                     {% if showings.play == play_instance %}
-                    <a href="{% url 'booking_form' nowplaying.id %"><div class="btn btn-outline-dark">{{ showings.date }}</div></a>
+                    <a href="{% url 'booking_form' play_instance.id %}"><div class="btn btn-outline-dark">{{ showings.date }}</div></a>
                     {% endif %}
                     {% endfor %}
                 </div>

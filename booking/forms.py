@@ -5,7 +5,7 @@ from .models import Play, NowPlaying, Booking
 
 class BookingForm(forms.ModelForm):
     class Meta:
-        model_booking = Booking
+        model = Booking
         exclude = ("user_profile",)
 
     def __init__(self, *args, **kwargs):
