@@ -16,7 +16,7 @@ class BookingForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         placeholders = {
             'play': 'Play',
-            'viewing': 'Date and time',
+            'date': 'Date and time',
             'amount': 'Number of tickets',
             'name': 'Full name',
             'email': 'Email',
@@ -56,5 +56,4 @@ class NowPlayingForm(forms.ModelForm):
             'status': 'Status',
             'seats': 'Seats',
             'date': 'Date',
-            'time': 'Time',
         }

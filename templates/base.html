@@ -43,11 +43,11 @@
                     {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'profile' %}">My account</a></li>
                     <li class="nav-item"><a class="btn btn-success text-uppercase" href="{% url 'account_logout' %}">Log out!</a></li>
-                    {% if user.is_superuser %}
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'add_play' %}">Add play</a></li>
                     {% else %}
                     <li class="nav-item"><a class="btn btn-success text-uppercase" href="{% url 'account_login' %}">Log in!</a></li>
                     {% endif %}
+                    {% if user.is_superuser %}
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'add_play' %}">Add play</a></li>
                     {% endif %}
                 </ul>
             </div>

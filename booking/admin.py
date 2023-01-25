@@ -28,13 +28,13 @@ class NowPlayingAdmin(admin.ModelAdmin):
 
 
 class BookingAdmin(admin.ModelAdmin):
-    readonly_fields = ('play', 'viewing')
+    readonly_fields = ('play', 'date')
 
     fields = ('amount', 'name', 'email')
 
     list_display = (
         'play',
-        'viewing',
+        'date',
         'amount',
         'name',
         'email',

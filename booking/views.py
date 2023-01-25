@@ -30,23 +30,20 @@ def play_dates(request, play_id):
     return render(request, template, context)
 
 def Booking(request, nowplaying_id):
-    showing_instance = get_object_or_404(NowPlaying, pk=nowplaying_id)
-    booking_form = BookingForm()
-
+    viewing_instance = get_object_or_404(NowPlaying, pk=nowplaying_id)
     if request.method == 'POST':
-        
-        booking_form = BookingForm(request.POST)
+        booking_form = BookingForm(request.POST, request.FILES, instance=viewing_instance)
         if booking_form.is_valid():
-            booking_form.play = showing_instance.play
-            booking_form.viewing = showing_instance.date
             booking_form.save()
             return redirect(reverse('home'))
         else:
             print("error")
+    else:
+        booking_form = BookingForm(instance=viewing_instance)
     
     template = "booking/form_booking.html"
     context = {
-        'showing_instance': showing_instance,
+        'viewing_instance': viewing_instance,
         'booking_form': booking_form
     }
 

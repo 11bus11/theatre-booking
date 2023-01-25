@@ -8,7 +8,7 @@
     <div class="container" id="ticket-choice">
         <div class="card-deck row justify-content-around ">
             <div class="card col-10">
-                <form action="{% url 'edit_play' play_instance.id %}" method="POST" id="add-form">
+                <form action="{% url 'edit_play' play_instance.id %}" method="POST" class="col-4 mb-4" id="add-form">
                     {% csrf_token %}
                     {{form}}
                     <a href=""><div class="btn btn-outline-dark">Cancel</div></a>
