@@ -8,12 +8,7 @@
             <div class="card col-8">
                 <div class="card-body">
                     <h5 class="card-title">My profile</h5>
-                        <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                            {% csrf_token %}
-                            {{ form }}
-                            <br>
-                            <button class="btn btn-success mt-2">Save information</button>
-                        </form>
+                        
                     </div>
                 </div>
             </div>
