@@ -20,8 +20,7 @@ class NowPlaying(models.Model):
     play = models.ForeignKey(Play, on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS, default=0)
     seats = models.IntegerField(default=41)
-    date = models.DateField()
-    time = models.TimeField()
+    date = models.DateTimeField()
 
     class Meta:
         ordering = ['-date']

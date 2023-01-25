@@ -34,13 +34,11 @@ def Booking(request, nowplaying_id):
     booking_form = BookingForm()
 
     if request.method == 'POST':
-        form_data = {
-            'name': request.POST['name'],
-            'email': request.POST['email'],
-        }
-
+        
         booking_form = BookingForm(request.POST)
         if booking_form.is_valid():
+            booking_form.play = showing_instance.play
+            booking_form.viewing = showing_instance.date
             booking_form.save()
             return redirect(reverse('home'))
         else:

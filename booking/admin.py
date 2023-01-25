@@ -17,7 +17,6 @@ class PlayAdmin(admin.ModelAdmin):
 class NowPlayingAdmin(admin.ModelAdmin):
     list_display = (
         'date',
-        'time',
         'play',
         'status',
         'seats',
