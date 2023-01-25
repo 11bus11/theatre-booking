@@ -29,10 +29,10 @@ def play_dates(request, play_id):
 
     return render(request, template, context)
 
-def Booking(request, nowplaying_id):
+def place_booking(request, nowplaying_id):
     viewing_instance = get_object_or_404(NowPlaying, pk=nowplaying_id)
     if request.method == 'POST':
-        booking_form = BookingForm(request.POST, request.FILES, instance=viewing_instance)
+        booking_form = BookingForm(request.POST)
         if booking_form.is_valid():
             booking_form.save()
             return redirect(reverse('home'))
@@ -48,6 +48,21 @@ def Booking(request, nowplaying_id):
     }
 
     return render(request, template, context)
+
+@login_required
+def all_bookings(request):
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+    
+    bookings = Booking.objects.all()
+    template = 'booking/all_bookings.html'
+
+    context = {
+        'bookings': bookings,
+    }
+
+    return render(request, template, context)
+
 
 @login_required
 def add_play(request):

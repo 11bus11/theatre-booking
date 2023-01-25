@@ -48,6 +48,7 @@
                     {% endif %}
                     {% if user.is_superuser %}
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'add_play' %}">Add play</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'all_bookings' %}">Bookings</a></li>
                     {% endif %}
                 </ul>
             </div>
