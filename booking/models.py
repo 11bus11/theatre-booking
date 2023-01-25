@@ -12,6 +12,9 @@ class Play( models.Model):
     description = models.CharField(max_length=1000, null=False, blank=False, default="To be added")
     image = models.CharField(max_length=254, null=True, blank=True)
 
+    def __str__(self):
+        return self.name
+
 
 class NowPlaying(models.Model):
     play = models.ForeignKey(Play, on_delete=models.CASCADE)
@@ -22,6 +25,9 @@ class NowPlaying(models.Model):
 
     class Meta:
         ordering = ['-date']
+
+    def __str__(self):
+        return str(self.date)
 
 class Booking(models.Model):
     play = models.ForeignKey(Play, on_delete=models.CASCADE)

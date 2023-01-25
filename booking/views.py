@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
@@ -39,10 +39,9 @@ def Booking(request, nowplaying_id):
             'email': request.POST['email'],
         }
 
-        booking_form = BookingForm(form_data)
+        booking_form = BookingForm(request.POST)
         if booking_form.is_valid():
-            booking = booking_form.save(commit=False)
-            booking.save()
+            booking_form.save()
             return redirect(reverse('home'))
         else:
             print("error")
