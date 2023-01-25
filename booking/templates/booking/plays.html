@@ -5,17 +5,16 @@
 {% block content %}
     <!-- Main Content-->
     
-    <div class="container" id="plays-choice">
+    <div class="container col-12" id="plays-choice">
         <div class="card-deck row justify-content-around">
-            <div class="card col-11">
+            <div class="card col-8">
                 <div class="card-body">
                     <h5 class="card-title">Our plays</h5>
                     <p class="card-text">These are the plays that is currently available. You can book tickets for them by clicking the "tickets" link.</p>
                 </div>
             </div>
-
             {% for play in plays %}
-            <div class="card col-11 col-md-5">
+            <div class="card col-11">
                 <img class="card-img-top" src="{{MEDIA_URL}}{{ play.image }}" alt="play theme image. {{ play.name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ play.name }}</h5>
