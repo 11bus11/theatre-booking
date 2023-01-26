@@ -1,0 +1,89 @@
+:root {
+    --light-red: #590004 ;
+    --dark-red: #250001;
+    --green-btn: #55CB1E;
+}
+
+#cont {
+    background-color: var(--light-red);
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+#nav {
+    background-color: var(--dark-red);
+}
+
+footer {
+    background-color: var(--dark-red);
+}
+
+.nav-item {
+    color: white;
+}
+
+
+
+header.masthead {
+    background-color: RGBA(108, 117, 125, 1);
+    background-image: url('../../media/christmas.jpg') !important;
+}
+
+.card-deck {
+    left: auto !important;
+
+}
+
+#hook {
+    font-family: 'Pinyon Script', cursive;
+}
+
+.navbar, .container-fluid, .footer {
+    width: 100;
+    border: 0cm;
+}
+
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, .nav-item {
+    font-family: 'Mukta', sans-serif;
+}
+
+h1, .h1, h2, .h2, .subheading, .navbar-brand, .site-heading {
+    font-family: 'Pinyon Script', cursive;
+    
+}
+
+.navbar-brand {
+    font-size: 150%;
+}
+
+.btn {
+    border-radius: 5%;
+}
+
+.card {
+    display: inline-block;
+    
+}
+
+#ticket-choice, #play-choice {
+    margin-top: 10vh;
+}
+
+i {
+    color: white;
+}
+
+#director-img {
+    border-radius: 50%;
+}
+
+img {
+    margin-top: 2vh;
+}
+
+#director {
+    background-color: white;
+    border-radius: 1%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
