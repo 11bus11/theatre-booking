@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Booking, NowPlaying, Play
-#from django_summernote.admin import SummernoteModelAdmin
+
 
 class PlayAdmin(admin.ModelAdmin):
     list_display = (

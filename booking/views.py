@@ -49,6 +49,7 @@ def place_booking(request, nowplaying_id):
 
     return render(request, template, context)
 
+
 @login_required
 def all_bookings(request):
     if not request.user.is_superuser:
