@@ -21,7 +21,7 @@
         <div class="card-deck row justify-content-around">
             {% for play in plays %}
             <div class="card col-11 col-md-5 col-sm-5 col-xs-5">
-                <img class="card-img-top" src="{{MEDIA_URL}}{{ play.image }}" alt="play theme image. {{ play.name }}">
+                <img class="card-img-top" src="{% static '{{ play.image }}' %}" alt="play theme image. {{ play.name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ play.name }}</h5>
                     <p class="card-text">{{ play.description }}</p>
