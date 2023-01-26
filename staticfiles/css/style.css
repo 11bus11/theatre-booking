@@ -26,7 +26,7 @@ footer {
 
 header.masthead {
     background-color: RGBA(108, 117, 125, 1);
-    background-image: url('../../media/christmas.jpg') !important;
+    background-image: url('../images/christmas.jpg') !important;
 }
 
 .card-deck {
