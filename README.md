@@ -125,7 +125,7 @@ The website was tested on these browsers:
 #### Unfixed bugs
 
 ### Deployment
-This project was deployed with Heroku.
+This project was deployed with Heroku, and used Whitenoice for its static files.
 
 - Create an account at Heroku, and do not forget you need to confirm your e-mail to do this.
 - Create a list of dependencies in a text file named requirements (pip3 freeze > requirements.txt).
@@ -139,6 +139,8 @@ This project was deployed with Heroku.
     - Choose to deploy from GitHub.
     - Connect your account and choose a repository to deploy from.
     - Choose either Automatic or Manual deployment (recommended).
+- Follow the steps on [this page](https://whitenoise.evans.io/en/stable/django.html) to set up Whitenoice.
+- Make sure your images are on an external site, like [ibb](https://ibb.co). This prevents errors related to the images.
 - Make sure the live site is working.
 
 ## Credits
