@@ -15,7 +15,7 @@
             </div>
             {% for play in plays %}
             <div class="card col-11">
-                <img class="card-img-top" src="{{MEDIA_URL}}{{ play.image }}" alt="play theme image. {{ play.name }}">
+                <img class="card-img-top" src="{{ play.image }}" alt="play theme image. {{ play.name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ play.name }}</h5>
                     <p class="card-text">{{ play.description }}</p>

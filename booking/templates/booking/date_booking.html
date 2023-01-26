@@ -17,7 +17,7 @@
 
         <div class="card-deck row justify-content-around">
             <div class="card col-8">
-                <img class="card-img-top justify-content-around" src="{{MEDIA_URL}}{{ play_instance.image }}" alt="">
+                <img class="card-img-top justify-content-around" src="{{ play_instance.image }}" alt="">
                 <div class="card-body">
                     <h5 class="card-title">{{ play_instance.name }}</h5>
                     {% if user.is_superuser %}
