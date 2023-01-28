@@ -3,9 +3,11 @@ from django.views import generic, View
 from django.db import models
 from booking.models import Play
 
+from django.contrib import messages
+
 # Create your views here.
 
-def HomePage(request):
+def home_page(request):
     plays = Play.objects.all()
 
     template = "home/index.html"
@@ -16,5 +18,13 @@ def HomePage(request):
     return render(request, template, context)
 
     
-class AboutPage(generic.ListView):
-    template_name = "about.html"
+def about_page(request):
+    template = "home/about.html"
+
+    return render(request, template)
+
+
+def success_page(request):
+    template = "home/success.html"
+
+    return render(request, template)

@@ -36,8 +36,6 @@ def place_booking(request, nowplaying_id):
         if booking_form.is_valid():
             booking_form.save()
             return redirect(reverse('home'))
-        else:
-            print("error")
     else:
         booking_form = BookingForm(instance=viewing_instance)
     
@@ -75,7 +73,7 @@ def add_play(request):
         form = PlayForm(request.POST, request.FILES)
         if form.is_valid():
             play = form.save()
-            return redirect(reverse('home'))
+            return redirect(reverse('success'))
         else:
             print("error")
     else:
@@ -100,7 +98,7 @@ def edit_play(request, play_id):
         form = PlayForm(request.POST, request.FILES, instance=play_instance)
         if form.is_valid():
             form.save()
-            return redirect(reverse('home'))
+            return redirect(reverse('success'))
         else:
             print("error")
     else:
