@@ -42,27 +42,36 @@ The navigation bar changes between being a hamburger menue and a standard naviga
 
 In the footer you can find the adress of the theatre and links to all relevant social media.
 
+![Nav mobile](assets/nav-md-sm.JPG)
+![Nav desktop](assets/nav-lg.JPG)
+![Footer](assets/footer.JPG)
+
 ### Home page
 The starting page has a big image trying to make the user buy tickets for a play (a green button takes the user to the page for choosing a play). Below that all plays are shown (click "TICKETS" to see dates available). Last of all there is a quote from the director. 
 
 ![Home page](assets/home-page.PNG)
 ![Home page large](assets/home-page-lg.PNG)
 
-### Plays page
+### Booking
+
+#### Plays page
 Shows all the plays. This is where you choose what play you want to watch. When you click on "TICKETS", you will be sent to a page where you can choose what date and time you want to see the play.
 
 ![Plays page]()
 
-### Dates page
+#### Dates page
 This is where you choose what date and time you want to watch the lay. The page only shows the times available for the chosen play. If you click on one of the times, you will be sent to the booking form page, where you can add contact information and specify how many tickets you want to reserv.
 
 The database is used to keep track of dates and which times plays have seats left. The ones that have seats left are shown in green, while the other ones are shown in grey. The grey ones does not take you anywhere.
 
 ![Dates page]()
 
+#### Booking form
+This is the page with the form needed to book seats for a play. The user adds the information needed, and then press "place booking". If the form goes thru, the success page shows up. The success page is just a simple page telling you that it went thru (has a home page button), and the form page is just the form and a crd with information.
+OBS! It is important that the user chooses the right date, since this currently is not done automatically.
+
 ### Login/log out page
 I used django allauth for the accounts. The login, and log out pages are the allauth template with the css used for the rest of the site.
-
 
 ### User page
 It is used to show the user their booking information. The database is used to keep track of the booking information.
@@ -79,6 +88,7 @@ Everything else has to be done from the Django admin page (found at /admin).
 
 ### Potential features
 - A function that sends an email to the user containing all booking information. 
+- The date is inputted automatically to the form.
 - More robust admin functionality.
 
 ## Testing
@@ -87,18 +97,17 @@ This project was tested maually.
 ### User stories
 I want the costumer to be able to:
 - See what dates the plays are.
- - Can be fount on the dates-booking page.
+  - Can be fount on the dates-booking page.
 - Make bookings.
- - Bookings can be made by users regardless of login status.
+  - Bookings can be made by users regardless of login status.
 - See their booking information.
- - All bookings connected to a users account can be found on the profile page.
+  - All bookings connected to a users account can be found on the profile page.
 
 I want the admin to be able to:
 - See the bookings made.
- - The admin can see the bookings thru the bookings page (admin only).
+  - The admin can see the bookings thru the bookings page (admin only).
 - Change and cancel bookings.
- - It is also possible to change or cancel bookings on the admin page.
-  - Can be done, but only thru the Django admin page. The plays can be changed or deleted from the frontend.
+  - Can be done, but only thru the Django admin page. The plays can be changed, added or deleted from the frontend.
 
 ### Device testing
 Since I used a premade template, most of the device size adaption were already made. All i had to do was make sure the content was the right size. I still checked on multiple devices to make sure everything was working.
@@ -110,6 +119,12 @@ I tested the website (natively) on these devices:
 - Laptop (ACER aspire 5)
 
 I also tested the website on Mozilla developer tools:
+- iPhone 12/13 + Pro
+- iPhone 12/13 Mini
+- iPhone SE (2nd generation)
+- iPad
+- Galaxy S20
+- Galaxy Note 20
 
 ### Browser testing
 The website was tested on these browsers:
