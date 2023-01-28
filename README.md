@@ -5,7 +5,7 @@ A website for a made up theatre, with booking functions. This website was made a
 ### User Stories
 I want the costumer to be able to:
 - See what dates the plays are.
-- Make bookings, reebook and cancel bookings.
+- Make bookings.
 - See their booking information.
 
 I want the admin to be able to:
@@ -13,18 +13,17 @@ I want the admin to be able to:
 - Change and cancel bookings.
 
 ### Colour
-I chose to use red bacause it is a common colour used in theatres. I have a lighter and a darker red for background and menues. Then i have a green for buttons, and black and white for the text. White is also used for the content fields.
+I chose to use red bacause it is a common colour used in theatres. I have a lighter and a darker red for background and menues. Then i have a green for buttons, which I ended up not using. Lastly, there were black and white for the text. White is also used as background for the content fields.
 ![Colour palette](assets/colour-palette.png)
 
 All colours passed the [Accessibility Checker's](https://www.accessibilitychecker.org/color-contrast-checker/) colour contrast test.
 ![Lighter red colour](assets/theatre-light-red.JPG)
 ![Darker red colour](assets/theatre-dark-red.JPG)
-![Green colour](assets/theatre-green.JPG)
 
 ### Structure and typography
-I wanted the website to look classy and to remind people of a theatre (tried to do that with the background colour).
+I wanted the website to look classy and to remind people of a theatre (tried to do that with the background colour). Then i chose to use white cards for the content in order to make them stand out.
 #### Structure
-These are the innitial wireframes.
+These are the innitial wireframes. The final product deviates a bit from these.
 
 ![Wireframe index](assets/wireframe-index.JPG)
 ![Wireframe index](assets/wireframe-booking.JPG)
@@ -33,7 +32,9 @@ These are the innitial wireframes.
 ![Wireframe mobile](assets/wireframe-mobile.JPG)
 
 #### Typography
-All fonts are san serif due to it being easier to read on a screen. The fonts i chose were Mukta for the content, and Pinyon Script for "city theatre" at the top. It is also used for some of the text ont he log in page and the promotional image.
+All fonts are san serif due to it being easier to read on a screen. The fonts i chose were [Mukta](https://fonts.google.com/specimen/Mukta?query=mukta) for the content, and [Pinyon Script](https://fonts.google.com/specimen/Pinyon+Script?query=pinyon+) for "city theatre" at the top. It is also used for some of the text on the log in page and the promotional image.
+
+I used the Pinyon Script font due to cursive font making it look classy, which goes well with the rest of the page. For the content I needed something that was easy to read, but still fit into the classy look. That is why i chose Mukta.
 
 ## Features
 ### Navigation and footer
@@ -41,55 +42,66 @@ The navigation bar changes between being a hamburger menue and a standard naviga
 
 In the footer you can find the adress of the theatre and links to all relevant social media.
 
-### Starting page
-The starting page has a big image trying to make the user buy tickets for a play. Below that all plays are shown (click "TICKETS" to see dates available). Last of all there is a quote from the director. 
-![Starting page]
+### Home page
+The starting page has a big image trying to make the user buy tickets for a play (a green button takes the user to the page for choosing a play). Below that all plays are shown (click "TICKETS" to see dates available). Last of all there is a quote from the director. 
+
+![Home page](assets/home-page.PNG)
+![Home page large](assets/home-page-lg.PNG)
 
 ### Plays page
 Shows all the plays. This is where you choose what play you want to watch. When you click on "TICKETS", you will be sent to a page where you can choose what date and time you want to see the play.
-![Plays page]
+
+![Plays page]()
 
 ### Dates page
 This is where you choose what date and time you want to watch the lay. The page only shows the times available for the chosen play. If you click on one of the times, you will be sent to the booking form page, where you can add contact information and specify how many tickets you want to reserv.
 
 The database is used to keep track of dates and which times plays have seats left. The ones that have seats left are shown in green, while the other ones are shown in grey. The grey ones does not take you anywhere.
 
-### Login/sign in page
-Two versions of the same page. One for signing up and one for logging in. They are built the same way exept the sign up page has an extra field for confirming password. The inputed data is either saved in the database (in the case of a sign up), or checked against the info in the database (in the case of a log in).
-![Login page]
+![Dates page]()
+
+### Login/log out page
+I used django allauth for the accounts. The login, and log out pages are the allauth template with the css used for the rest of the site.
+
 
 ### User page
-It is used to show the user their booking and to make it possible for them to change or delete their bookings. The database is used for the booking information. Here you can also add your user information.
-![User page]
+It is used to show the user their booking information. The database is used to keep track of the booking information.
+
+All bookings are shown in a simple table.
 
 ### About page
-The about page is a simple page with info about the theatre and potential job openings.
-![about page]
+The about page is a simple page with info about the theatre and potential job openings. It contains 2 cards.
 
 ### Admin functionality
-A page on the frontend shows the admin what bookings are placed. On this page the admin can also change, create or delete bookings. On another page the admin can add plays, and when they are logged in they can edit the plays from the plays page.
+A page on the frontend shows the admin what bookings are placed ("bookings" in nav-bar. Only visible to superuser). On another page the admin can add plays (link in nav-bar if logged in as superuser). On the date booking page the admin can edit and delete plays. These buttns only shows up if you are logged in as a superuser (admin). No admin page is available if you are not a superuser.
+
+Everything else has to be done from the Django admin page (found at /admin).
 
 ### Potential features
 - A function that sends an email to the user containing all booking information. 
-- More robust admin functionality
+- More robust admin functionality.
 
 ## Testing
-This project was thested in many different ways. It was tested with both software and maually.
+This project was tested maually.
 
 ### User stories
 I want the costumer to be able to:
 - See what dates the plays are.
-- Make bookings, reebook and cancel bookings.
+ - Can be fount on the dates-booking page.
+- Make bookings.
+ - Bookings can be made by users regardless of login status.
 - See their booking information.
+ - All bookings connected to a users account can be found on the profile page.
 
 I want the admin to be able to:
 - See the bookings made.
- - The admin can see the bookings thru the admin page.
+ - The admin can see the bookings thru the bookings page (admin only).
 - Change and cancel bookings.
  - It is also possible to change or cancel bookings on the admin page.
+  - Can be done, but only thru the Django admin page. The plays can be changed or deleted from the frontend.
 
 ### Device testing
-Since I used a premade template, most of the device size adaption were already made. I still checked on some devices to make sure everything was working.
+Since I used a premade template, most of the device size adaption were already made. All i had to do was make sure the content was the right size. I still checked on multiple devices to make sure everything was working.
 
 I tested the website (natively) on these devices:
 - iPhone SE (2nd generation)
