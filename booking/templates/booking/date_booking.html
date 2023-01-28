@@ -21,14 +21,14 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ play_instance.name }}</h5>
                     {% if user.is_superuser %}
-                    <a href="{% url 'edit_play' play_instance.id %}"><button class="btn btn-outline-dark">Edit</button></a>
-                    <a href="{% url 'delete_play' play_instance.id %}"><button class="btn btn-danger">Delete</button></a>
+                    <a href="{% url 'edit_play' play_instance.id %}"><button class="btn btn-outline-dark text-uppercase">Edit</button></a>
+                    <a href="{% url 'delete_play' play_instance.id %}"><button class="btn btn-danger text-uppercase">Delete</button></a>
                     {% endif %}
                     <p class="card-text">{{ play_instance.description }}</p>
                     <p>Price: 60£</p>
                     {% for showings in showings %}
                     {% if showings.play == play_instance %}
-                    <a href="{% url 'booking_form' play_instance.id %}"><div class="btn btn-outline-dark">{{ showings.date }}</div></a>
+                    <a href="{% url 'booking_form' play_instance.id %}"><div class="btn btn-outline-dark text-uppercase">{{ showings.date }}</div></a>
                     {% endif %}
                     {% endfor %}
                 </div>

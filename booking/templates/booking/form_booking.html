@@ -6,13 +6,20 @@
     <!-- Main Content-->
     
     <div class="container" id="ticket-choice">
+        <div class="card">
+            <p>Make sure you choose the same time and date as on 
+                the previous page. We are working on getting it too choose the 
+                right one automatically. For now, please double check you have 
+                the right date, as having the wrong date may cause issues with 
+                your booking. <br> Thank you, City Theatre</p>
+        </div>
         <div class="card-deck row justify-content-around ">
             <div class="card col-8">
                 <form action="{% url 'booking_form' viewing_instance.id %}" method="POST" class="col-3" id="booking-form">
                     {% csrf_token %}
                     {{booking_form}}
-                    <a href=""><div class="btn btn-outline-dark mt-4 mb-4">Cancel</div></a>
-                    <button class="btn btn-success mt-4 mb-4" type="submit">Place booking</button>
+                    <a href="{% url 'home' %]"><div class="btn btn-outline-dark text-uppercase mt-4 mb-4">Cancel</div></a>
+                    <button class="btn btn-success text-uppercase mt-4 mb-4" type="submit">Place booking</button>
                 </form>
                 
             </div>

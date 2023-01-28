@@ -40,7 +40,7 @@ def place_booking(request, nowplaying_id):
                 profile = UserProfile.objects.get(user=request.user)
                 booking.user_profile = profile
             booking_form.save()
-            return redirect(reverse('home'))
+            return redirect(reverse('success'))
     else:
         booking_form = BookingForm(instance=viewing_instance)
     
@@ -81,8 +81,6 @@ def add_play(request):
         if form.is_valid():
             play = form.save()
             return redirect(reverse('success'))
-        else:
-            print("error")
     else:
         form = PlayForm()
 
@@ -106,8 +104,6 @@ def edit_play(request, play_id):
         if form.is_valid():
             form.save()
             return redirect(reverse('success'))
-        else:
-            print("error")
     else:
         form = PlayForm(instance=play_instance)
 
@@ -128,6 +124,5 @@ def delete_play(request, play_id):
 
     play_instance = get_object_or_404(Play, pk=play_id)
     play_instance.delete()
-    print("delete")
-    return redirect(reverse('home'))
+    return redirect(reverse('success'))
 

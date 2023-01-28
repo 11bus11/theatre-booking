@@ -11,8 +11,8 @@
                 <form action="{% url 'edit_play' play_instance.id %}" method="POST" class="col-4 mb-4" id="add-form">
                     {% csrf_token %}
                     {{form}}
-                    <a href=""><div class="btn btn-outline-dark">Cancel</div></a>
-                    <button class="btn btn-success" type="submit">Place booking</button>
+                    <a href="{% url 'plays' %}"><div class="btn btn-outline-dark">Cancel</div></a>
+                    <button class="btn btn-success text-uppercase" type="submit">Update play</button>
                 </form>
                 
             </div>
