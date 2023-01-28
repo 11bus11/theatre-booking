@@ -83,6 +83,12 @@ img {
     padding-bottom: 5%;
 }
 
+/* Table css */
+table {
+    width: 90vw;
+    position: relative;
+}
+
 /* misc css */
 i {
     color: white;
