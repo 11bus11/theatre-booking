@@ -6,7 +6,7 @@
     <!-- Main Content-->
     
     <div class="container" id="ticket-choice">
-        <div class="card">
+        <div class="card col-11 col-lg-8">
             <p>Make sure you choose the same time and date as on 
                 the previous page. We are working on getting it too choose the 
                 right one automatically. For now, please double check you have 
@@ -14,7 +14,7 @@
                 your booking. <br> Thank you, City Theatre</p>
         </div>
         <div class="card-deck row justify-content-around ">
-            <div class="card col-8">
+            <div class="card col-11 col-lg-8">
                 <form action="{% url 'booking_form' viewing_instance.id %}" method="POST" class="col-3" id="booking-form">
                     {% csrf_token %}
                     {{booking_form}}

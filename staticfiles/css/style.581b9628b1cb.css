@@ -29,7 +29,7 @@ footer {
 /* hook css (index.html) */
 header.masthead {
     background-color: RGBA(108, 117, 125, 1);
-    background-image: url('../images/christmas.jpg') !important;
+    background-image: url("../images/christmas.e60f6db63da1.jpg") !important;
 }
 
 #hook {

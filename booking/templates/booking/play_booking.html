@@ -6,8 +6,8 @@
     <!-- Main Content-->
     
     <div class="container" id="ticket-choice">
-        <div class="card-deck row justify-content-around ">
-            <div class="card col-8" >
+        <div class="card-deck row col-12 justify-content-around ">
+            <div class="card col-11 col-lg-8 row justify-content-around" >
                 <div class="card-body">
                     <h5 class="card-title">Buy tickets</h5>
                     <p class="card-text">Choose a play and click on tickets. This will take you to the page for choosing what date you want to see the play.</p>
@@ -17,8 +17,8 @@
 
         <div class="card-deck row justify-content-around">
             {% for play in plays %}
-            <div class="row col-12">
-                <div class="card col-6">
+            <div class="row col-12 row justify-content-around">
+                <div class="card col-11 col-lg-8 row justify-content-around">
                     <img class="card-img-top" src="{{ play.image }}" alt="play theme image. {{ play.name }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ play.name }}</h5>
