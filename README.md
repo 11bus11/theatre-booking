@@ -86,10 +86,36 @@ Everything else has to be done from the Django admin page (found at /admin).
 - More robust admin functionality.
 
 ## Technologies
+### Requirements 
+'''
+asgiref==3.5.2
+chardet==3.0.4
+click==8.1.3
+dj-database-url==0.5.0
+Django==3.2.16
+django-allauth==0.41.0
+gunicorn==20.1.0
+idna==2.8
+itsdangerous==2.1.2
+oauthlib==3.1.1
+psycopg2==2.9.5
+psycopg2-binary==2.9.5
+python3-openid==3.2.0
+pytz==2022.6
+requests==2.22.0
+requests-oauthlib==1.3.0
+sqlparse==0.4.3
+urllib3==1.25.11
+Werkzeug==2.2.2
+whitenoise==6.3.0
+'''
+
+### Languages
 - HTML
 - CSS
 - Python
 
+### Others
 - Django - Backend
 - Bootstrap - Frontend
 - postgreSQL - Database
@@ -145,7 +171,7 @@ The website was tested on these browsers:
 - I ran the HTML thru the [W3](https://validator.w3.org/) validator, and got no errors not related to bootstrap.
 - Due to me not having written any custom JS code, there was nothing to validate. I used bootstrap.
 - The CSS Went thru the [Jigsaw](https://jigsaw.w3.org/css-validator/validator) validator with only one error. I tried to find the cause, but could not find it.
-- I did not have the time to validate my python code, but i looked it  over and it seemed fine.
+- I did not manage to validate my Python code due to problems with getting the linter to work, but I looked it  over and it seemed fine.
 
 ### Manual testing
 - Thested the booking funktionality by placing a booking and then making sure everything worked as expected. I did this by using the terminal and Django admin page.
