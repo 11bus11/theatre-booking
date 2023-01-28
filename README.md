@@ -120,14 +120,13 @@ The website was tested on these browsers:
 - DuckDuckGo (mobile)
 
 ### Peer review
+- One of the people who looked at my page saw some problems with the content sizing on smaller devices. This is now fixed. Other than that he liked the page.
+- Another person found a link that did not work, and some small problems with the css. Sadly i did not have the time to fix the css problems, since they were small and i was running out of time. I fixed the faulty link.
 
 ### Validator testing
 
-### Software testing
+### Manual testing
 
-#### JavaScript testing - Jest
-
-#### Python testing
 
 ### Bugs
 #### Fixed bugs
@@ -135,6 +134,7 @@ The website was tested on these browsers:
 - Another bug that took a long time to fix was the fact that i could not get the links to the images to work. it turnd out it was a few things that had to be changed in the settings for the media-url. It took a while to figure out the correct lines of code, but with the help of the Code Institute tutors the bug was finally solved.
 
 #### Unfixed bugs
+- The booking form does not choose the right date automatically, so I had to add text at the top telling users to make sure they chose the right date. This bug still exists due to time constraints and other issues having to be prioritised above it.
 
 ### Deployment
 This project was deployed with Heroku, and used Whitenoice for its static files.
@@ -151,18 +151,18 @@ This project was deployed with Heroku, and used Whitenoice for its static files.
     - Choose to deploy from GitHub.
     - Connect your account and choose a repository to deploy from.
     - Choose either Automatic or Manual deployment (recommended).
-- Follow the steps on [this page](https://whitenoise.evans.io/en/stable/django.html) to set up Whitenoice.
+- Follow the steps on [this page](https://whitenoise.evans.io/en/stable/django.html) to set up Whitenoice. This is the same instructions I used. Dont forget to run the command "python3 manage.py collectstatic".
 - Make sure your images are on an external site, like [ibb](https://ibb.co). This prevents errors related to the images.
 - Make sure the live site is working.
 
 ## Credits
 
 ### Code
-The Backend part of the code is based on Code Institute's "I think therefore I blog" walkthru project. Some small parts are also based on the [Boutique Ado]() project from Code Institute. The front end part is made using a modified version of the [Clean blog](https://startbootstrap.com/theme/clean-blog) template from [startbootstrap](startbootstrap.com).
+The Backend part of the code is based on Code Institute's "I think therefore I blog" walkthru project. Some parts are also based on the [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) project from Code Institute. The front end part is made using a modified version of the [Clean blog](https://startbootstrap.com/theme/clean-blog) template from [startbootstrap](startbootstrap.com).
 
 ### Content and media
-The pictures for this project is from [pexels.com](www.pexels.com). The [christmas picture](https://www.pexels.com/photo/gold-christmas-bauble-246351/) is from the user Valeria Vinnik, the [house picture](https://www.pexels.com/photo/stone-building-on-a-countryside-5667618/) is from the user ROMAN ODINTSOV, the [theatre picture](https://www.pexels.com/photo/theater-interior-109669/) is from the user Donald Tong, the [jobs picture](https://www.pexels.com/photo/depth-of-field-photo-of-man-sitting-on-chair-while-holding-cup-in-front-of-table-927451/) is from the user Andrea Piacquadio, and the [head director picture](https://www.pexels.com/photo/man-wearing-white-dress-shirt-and-black-blazer-2182970/) is from the user LinkedIn Sales Navigator.
+The pictures for this project is from [pexels.com](www.pexels.com). The [christmas picture](https://www.pexels.com/photo/gold-christmas-bauble-246351/) is from the user Valeria Vinnik, the [house picture](https://www.pexels.com/photo/stone-building-on-a-countryside-5667618/) is from the user ROMAN ODINTSOV, the [theatre picture](https://www.pexels.com/photo/theater-interior-109669/) is from the user Donald Tong, the [jobs picture](https://www.pexels.com/photo/depth-of-field-photo-of-man-sitting-on-chair-while-holding-cup-in-front-of-table-927451/) is from the user Andrea Piacquadio, and the [head director picture](https://www.pexels.com/photo/man-wearing-white-dress-shirt-and-black-blazer-2182970/) is from the user LinkedIn Sales Navigator. All pictures are hosted thru [ibb](https://imgbb.com/) to avoid deployment problems.
 
-All icons are from [font awesome](https://fontawesome.com/icons), and the fonts are from [Google fonts](https://fonts.google.com/).
+All fonts are from [Google fonts](https://fonts.google.com/).
 
 Erik Vodopivec Forsman, 2023
