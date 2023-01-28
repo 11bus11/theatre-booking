@@ -34,7 +34,7 @@ class Booking(models.Model):
     amount = models.IntegerField(default=1)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
-                                     related_name='orders')
+                                     related_name='bookings')
     name = models.CharField(max_length=200)
     email = models.EmailField()
 

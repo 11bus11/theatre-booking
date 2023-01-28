@@ -10,7 +10,7 @@ class UserProfile(models.Model):
         ordering = ['user']
 
     def __str__(self):
-        return self.name
+        return str(self.user)
 
 
 

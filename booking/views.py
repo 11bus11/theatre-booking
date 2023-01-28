@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from .models import Booking, NowPlaying, Play
 from .forms import PlayForm, NowPlayingForm, BookingForm
+from useraccount.models import UserProfile
 
 
 def plays(request):
@@ -34,11 +35,17 @@ def place_booking(request, nowplaying_id):
     if request.method == 'POST':
         booking_form = BookingForm(request.POST)
         if booking_form.is_valid():
+            booking = booking_form.save(commit=False)
+            if request.user.is_authenticated:
+                profile = UserProfile.objects.get(user=request.user)
+                booking.user_profile = profile
             booking_form.save()
             return redirect(reverse('home'))
     else:
         booking_form = BookingForm(instance=viewing_instance)
     
+
+
     template = "booking/form_booking.html"
     context = {
         'viewing_instance': viewing_instance,

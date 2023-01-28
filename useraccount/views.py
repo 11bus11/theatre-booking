@@ -8,9 +8,11 @@ from .models import UserProfile
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
+    bookings = profile.bookings.all()
 
     template = 'useraccount/my_account.html'
     context = {
+        'bookings': bookings,
         'on_profile_page': True
     }
 

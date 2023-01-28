@@ -8,7 +8,28 @@
             <div class="card col-8">
                 <div class="card-body">
                     <h5 class="card-title">My profile</h5>
-                        
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Play</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for booking in bookings %}
+                            <tr>
+                                <td>{{ booking.play }}</td>
+                                <td>{{ booking.date }}</td>
+                                <td>{{ booking.amount }}</td>
+                                <td>{{ booking.name }}</td>
+                                <td>{{ booking.email }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                     </div>
                 </div>
             </div>
