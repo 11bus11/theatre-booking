@@ -8,6 +8,7 @@ from useraccount.models import UserProfile
 
 
 def plays(request):
+    """ See all plays available """
     plays = Play.objects.all()
 
     template = "booking/play_booking.html"
@@ -18,6 +19,7 @@ def plays(request):
     return render(request, template, context)
 
 def play_dates(request, play_id):
+    """ See what dates a play is showing """
     play_instance = get_object_or_404(Play, pk=play_id)
     showings = NowPlaying.objects.all()
 
@@ -31,6 +33,7 @@ def play_dates(request, play_id):
     return render(request, template, context)
 
 def place_booking(request, nowplaying_id):
+    """ Create a booking """
     viewing_instance = get_object_or_404(NowPlaying, pk=nowplaying_id)
     if request.method == 'POST':
         booking_form = BookingForm(request.POST)
@@ -57,6 +60,7 @@ def place_booking(request, nowplaying_id):
 
 @login_required
 def all_bookings(request):
+    """ Show all bookings made (admin only) """
     if not request.user.is_superuser:
         return redirect(reverse('home'))
     
@@ -72,7 +76,7 @@ def all_bookings(request):
 
 @login_required
 def add_play(request):
-    """ Add a play to the store """
+    """ Add a play """
     if not request.user.is_superuser:
         return redirect(reverse('home'))
 
@@ -94,7 +98,7 @@ def add_play(request):
 
 @login_required
 def edit_play(request, play_id):
-    """ Edit a play in the store """
+    """ Edit a play"""
     play_instance = get_object_or_404(Play, pk=play_id)
     if not request.user.is_superuser:
         return redirect(reverse('home'))
@@ -118,7 +122,7 @@ def edit_play(request, play_id):
 
 @login_required
 def delete_play(request, play_id):
-    """ Delete a play from the store """
+    """ Delete a play from the website """
     if not request.user.is_superuser:
         return redirect(reverse('plays'))
 

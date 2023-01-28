@@ -19,12 +19,14 @@ def home_page(request):
 
     
 def about_page(request):
+    """ Page with information about the theatre """
     template = "home/about.html"
 
     return render(request, template)
 
 
 def success_page(request):
+    """ For showing the user their acction succeded (for example when adding a play) """
     template = "home/success.html"
 
     return render(request, template)
