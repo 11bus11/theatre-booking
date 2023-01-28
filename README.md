@@ -87,7 +87,7 @@ Everything else has to be done from the Django admin page (found at /admin).
 
 ## Technologies
 ### Requirements 
-'''
+```
 asgiref==3.5.2
 chardet==3.0.4
 click==8.1.3
@@ -108,7 +108,7 @@ sqlparse==0.4.3
 urllib3==1.25.11
 Werkzeug==2.2.2
 whitenoise==6.3.0
-'''
+```
 
 ### Languages
 - HTML
