@@ -42,9 +42,9 @@ The navigation bar changes between being a hamburger menue and a standard naviga
 
 In the footer you can find the adress of the theatre and links to all relevant social media.
 
-![Nav mobile](assets/nav-md-sm.JPG)
-![Nav desktop](assets/nav-lg.JPG)
-![Footer](assets/footer.JPG)
+![Nav mobile](assets/nav-md-sm.PNG)
+![Nav desktop](assets/nav-lg.PNG)
+![Footer](assets/footer.PNG)
 
 ### Home page
 The starting page has a big image trying to make the user buy tickets for a play (a green button takes the user to the page for choosing a play). Below that all plays are shown (click "TICKETS" to see dates available). Last of all there is a quote from the director. 
@@ -57,14 +57,8 @@ The starting page has a big image trying to make the user buy tickets for a play
 #### Plays page
 Shows all the plays. This is where you choose what play you want to watch. When you click on "TICKETS", you will be sent to a page where you can choose what date and time you want to see the play.
 
-![Plays page]()
-
 #### Dates page
 This is where you choose what date and time you want to watch the lay. The page only shows the times available for the chosen play. If you click on one of the times, you will be sent to the booking form page, where you can add contact information and specify how many tickets you want to reserv.
-
-The database is used to keep track of dates and which times plays have seats left. The ones that have seats left are shown in green, while the other ones are shown in grey. The grey ones does not take you anywhere.
-
-![Dates page]()
 
 #### Booking form
 This is the page with the form needed to book seats for a play. The user adds the information needed, and then press "place booking". If the form goes thru, the success page shows up. The success page is just a simple page telling you that it went thru (has a home page button), and the form page is just the form and a crd with information.
@@ -91,6 +85,15 @@ Everything else has to be done from the Django admin page (found at /admin).
 - The date is inputted automatically to the form.
 - More robust admin functionality.
 
+## Technologies
+- HTML
+- CSS
+- Python
+
+- Django - Backend
+- Bootstrap - Frontend
+- postgreSQL - Database
+
 ## Testing
 This project was tested maually.
 
@@ -110,7 +113,7 @@ I want the admin to be able to:
   - Can be done, but only thru the Django admin page. The plays can be changed, added or deleted from the frontend.
 
 ### Device testing
-Since I used a premade template, most of the device size adaption were already made. All i had to do was make sure the content was the right size. I still checked on multiple devices to make sure everything was working.
+Since I used a premade template, most of the device size adaption were already made. All i had to do was make sure the content was the right size. I still checked on multiple devices to make sure everything was working. The only problem waas a slight szising issue with the tables. It does not affect the functionality. 
 
 I tested the website (natively) on these devices:
 - iPhone SE (2nd generation)
@@ -139,9 +142,16 @@ The website was tested on these browsers:
 - Another person found a link that did not work, and some small problems with the css. Sadly i did not have the time to fix the css problems, since they were small and i was running out of time. I fixed the faulty link.
 
 ### Validator testing
+- I ran the HTML thru the [W3](https://validator.w3.org/) validator, and got no errors not related to bootstrap.
+- Due to me not having written any custom JS code, there was nothing to validate. I used bootstrap.
+- The CSS Went thru the [Jigsaw](https://jigsaw.w3.org/css-validator/validator) validator with only one error. I tried to find the cause, but could not find it.
+- I did not have the time to validate my python code, but i looked it  over and it seemed fine.
 
 ### Manual testing
-
+- Thested the booking funktionality by placing a booking and then making sure everything worked as expected. I did this by using the terminal and Django admin page.
+- I used a similar tactic to make sure all the play admin funktionality was working, but instead of the admin page, i used the front end of the website to see if they showed up or not.
+  - This was also the way I tested the python logic from the html-page. It made it easy to see what parts was the problem and what was already working. It also made it easy to see if the right stuff was shown in the different login-statuses.
+  - Due to the JS being all Bootstrap, all i did to test it was relode the page.
 
 ### Bugs
 #### Fixed bugs
